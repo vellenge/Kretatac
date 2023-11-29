@@ -3,8 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "669013ec3cb9c55772c64fe8a4ddca84",
-"assets/AssetManifest.json": "b697c3f0dcfdcf6f86b9ffb1d79abd7f",
+const RESOURCES = {"assets/AssetManifest.bin": "7b3383a3e4d50a9ab0d2598f12d9deea",
+"assets/AssetManifest.json": "dfc2a5912fe17ee0c76c2fbb594e8300",
+"assets/assets/animations/arrow.riv": "339ed249196bfd272520f67e2968eb46",
 "assets/assets/data/ideas.csv": "9b1123389b58991ff677955d3695f625",
 "assets/assets/data/therapies.csv": "15c2e13f2434d32a0cac78f818b7f580",
 "assets/assets/fonts/Roboto-Medium.ttf": "b2d307df606f23cb14e6483039e2b7fa",
@@ -13,6 +14,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "669013ec3cb9c55772c64fe8a4ddca84
 "assets/assets/images/doubt.svg": "3c06f4883666837be5143db9fba757d9",
 "assets/assets/images/happy.svg": "3bfeb53dfb9f86ee6e572cac1219dac4",
 "assets/assets/images/icone_pointage_main.svg": "d0236b539917ae10e6ad2898d101ba34",
+"assets/assets/images/logo.svg": "e18b3c6f2d8f9cb3c0d6e2b4629bdfd4",
 "assets/assets/images/mire.png": "a22585611a1342277d1ae1266bcbe566",
 "assets/assets/images/mire.svg": "0fa198c59be5118ffeb5a16518c7f977",
 "assets/assets/images/mire2.svg": "a7626994eb7624b033e19d48e97c13b9",
@@ -41,8 +43,8 @@ const RESOURCES = {"assets/AssetManifest.bin": "669013ec3cb9c55772c64fe8a4ddca84
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "13a0eec163666ade3f10c1c55f3e0686",
-"/": "13a0eec163666ade3f10c1c55f3e0686",
+"index.html": "4ba779bc68dc0bcf258b3d2f22994616",
+"/": "4ba779bc68dc0bcf258b3d2f22994616",
 "main.dart.js": "70f60356dc8bbd55fee2f632309a4b99",
 "manifest.json": "ea99071c259876944893c69090053e5c",
 "version.json": "bc7932695cd2ae468fc1b48ca88c608c"};
