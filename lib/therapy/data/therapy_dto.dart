@@ -27,6 +27,7 @@ class TherapyDTO extends Notifier<List<Therapy>> {
     }
     debugPrint("Therapies list is  ${therapies.length.toString()}");
     state = therapies;
+    print(state.map((element) => element.ideas).toString());
     print(state.length);
   }
 

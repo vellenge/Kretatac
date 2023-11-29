@@ -1,3 +1,4 @@
+import 'package:kretatac/commons/utils/capitalize_first_letter.dart';
 import 'package:kretatac/ideas/domain/idea.dart';
 import 'package:uuid/uuid.dart';
 
@@ -30,11 +31,14 @@ class Therapy {
 List<Idea> getIdeasFromCsvMapEntry(
     List<String> csvIdeas, List<Idea> ideaLibrary) {
   final List<Idea> result = [];
-
+  print('Ideas objets');
+  print(ideaLibrary.map((e) => e.name));
   for (final entry in csvIdeas) {
     Idea? newIdea;
+    print(entry);
     try {
-      newIdea = ideaLibrary.firstWhere((i) => i.name == entry);
+      newIdea = ideaLibrary
+          .firstWhere((i) => i.name == entry.capitalizeOnlyFirstLetter());
     } catch (e) {
       newIdea = null;
     }

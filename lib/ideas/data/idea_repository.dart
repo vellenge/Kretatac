@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kretatac/commons/utils/csv_parser.dart';
-import 'package:kretatac/ideas/data/dummy_ideas.dart';
+
 import 'package:kretatac/ideas/data/idea_dto.dart';
 import 'package:kretatac/ideas/domain/idea.dart';
 
@@ -17,7 +16,7 @@ class FakeIdeasRepository extends IdeaRepository {
 
   @override
   List<Idea>? getIdeas() {
-    print("getIdeas in IdeasRepo are $ideasList");
+    // print("getIdeas in IdeasRepo are $ideasList");
     return ideasList;
   }
 
@@ -44,13 +43,13 @@ class FakeIdeasRepository extends IdeaRepository {
 
 final ideaRepositoryProvider = Provider<IdeaRepository>((ref) {
   final ideas = ref.watch(ideaDTOProvider);
-  print("ideas in ideaRepoProvider are $ideas");
+  // print("ideas in ideaRepoProvider are $ideas");
   return FakeIdeasRepository(ideasList: ideas);
 });
 
 final getIdeasListProvider = Provider<List<Idea>?>((ref) {
   final repo = ref.watch(ideaRepositoryProvider);
-  print("repo getIdeas are ${repo}");
+  // print("repo getIdeas are ${repo}");
   return repo.getIdeas();
 });
 
