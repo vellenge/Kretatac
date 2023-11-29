@@ -18,6 +18,7 @@ class BouncingWidget extends HookWidget {
       child: child,
       builder: (context, child) {
         return Transform.translate(
+          filterQuality: FilterQuality.medium,
           offset: Offset(0, controller.value * 10),
           child: child,
         );

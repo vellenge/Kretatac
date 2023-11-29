@@ -32,6 +32,7 @@ class RotatingWidget extends HookWidget {
         animation: rotateAnim,
         child: child,
         builder: (context, child) => Transform.rotate(
+              filterQuality: FilterQuality.medium,
               angle: rotateAnim.value,
               child: child,
             ));

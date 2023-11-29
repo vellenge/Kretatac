@@ -33,6 +33,7 @@ class ScaleWidget extends HookWidget {
         animation: scaleAnim,
         child: child,
         builder: (context, child) => Transform.scale(
+              filterQuality: FilterQuality.medium,
               scale: isActive ? scaleAnim.value : 1,
               child: child,
             ));
