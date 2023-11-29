@@ -15,6 +15,7 @@ class MireRotationWidget extends StatelessWidget {
       child: Container(
         child: SvgPicture.asset(
           'assets/images/mire.svg',
+
           allowDrawingOutsideViewBox: true,
           // colorFilter:
           //     const ColorFilter.mode(Colors.transparent, BlendMode.darken),
