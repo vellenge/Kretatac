@@ -83,33 +83,30 @@ class HomeView extends HookConsumerWidget {
                                         BorderRadius.circular(Sizes.p8),
                                     child: Padding(
                                         padding: const EdgeInsets.all(Sizes.p8),
-                                        child: SingleChildScrollView(
-                                          child: Column(children: [
-                                            Text(ref.watch(introTextProvider),
-                                                style: themeData
-                                                    .textTheme.bodyLarge),
-                                            gapH12,
-                                            SizedOverflowBox(
-                                              size: const Size(800, 150),
-                                              // minWidth: 100,
-                                              // minHeight: 200,
-                                              // maxHeight: 400,
-                                              // maxWidth: 600,
-                                              child: Transform.rotate(
-                                                angle: -pi / 12,
-                                                child: NeuText(
-                                                    fontSize: 50,
-                                                    text: ref.watch(
-                                                        problemTextProvider)),
-                                              ),
+                                        child: ListView(children: [
+                                          Text(ref.watch(introTextProvider),
+                                              style: themeData
+                                                  .textTheme.bodyLarge),
+                                          gapH12,
+                                          SizedOverflowBox(
+                                            size: const Size(800, 150),
+                                            // minWidth: 100,
+                                            // minHeight: 200,
+                                            // maxHeight: 400,
+                                            // maxWidth: 600,
+                                            child: Transform.rotate(
+                                              angle: -pi / 12,
+                                              child: NeuText(
+                                                  fontSize: 50,
+                                                  text: ref.watch(
+                                                      problemTextProvider)),
                                             ),
-                                            gapH12,
-                                            Text(
-                                                ref.watch(discoverTextProvider),
-                                                style: themeData
-                                                    .textTheme.bodyLarge),
-                                          ]),
-                                        )),
+                                          ),
+                                          gapH12,
+                                          Text(ref.watch(discoverTextProvider),
+                                              style: themeData
+                                                  .textTheme.bodyLarge),
+                                        ])),
                                   ),
                                 ),
                                 SizedBox(

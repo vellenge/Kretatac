@@ -58,9 +58,9 @@ class ContentWidget extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium),
                   gapH8,
                   Expanded(
-                      child: SingleChildScrollView(
-                          child:
-                              Text(textAlign: TextAlign.justify, description))),
+                      child: ListView(children: [
+                    Text(textAlign: TextAlign.justify, description)
+                  ])),
                 ],
               ),
             ),
