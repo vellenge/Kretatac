@@ -17,13 +17,10 @@ import 'package:kretatac/commons/widgets/mire_rotation_widget.dart';
 import 'package:kretatac/commons/widgets/neu_text.dart';
 
 import 'package:kretatac/commons/widgets/scale_widget.dart';
-import 'package:kretatac/game/application/deck_service.dart';
 
 import 'package:kretatac/game/application/hand_service.dart';
-import 'package:kretatac/game/data/deck_repository.dart';
+
 import 'package:kretatac/game/presentation/game_view.dart';
-import 'package:kretatac/ideas/data/idea_dto.dart';
-import 'package:kretatac/ideas/data/idea_repository.dart';
 
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
@@ -32,7 +29,7 @@ class HomeView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ideasValue = ref.watch(getIdeasListProvider);
+    // final ideasValue = ref.watch(getIdeasListProvider);
     final themeData = Theme.of(context);
     final arrow = SvgPicture.asset(
       'assets/images/icone_pointage_main.svg',

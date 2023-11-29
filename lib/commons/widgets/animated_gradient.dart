@@ -10,19 +10,19 @@ class AnimatedGradient extends HookWidget {
 
   final Widget child;
 
-  List<Color> primaryColors = const [
+  final List<Color> primaryColors = const [
     Color.fromARGB(255, 227, 172, 157),
     Color.fromARGB(255, 227, 179, 157),
     Color.fromARGB(255, 241, 209, 165),
     Color.fromARGB(255, 220, 168, 172)
   ];
-  List<Color> secondaryColors = const [
+  final List<Color> secondaryColors = const [
     Color.fromARGB(255, 252, 174, 153),
     Color.fromARGB(255, 236, 198, 122),
     Color.fromARGB(255, 249, 214, 180),
     Color.fromARGB(255, 245, 230, 152)
   ];
-  List<Alignment> alignmentList = [
+  final List<Alignment> alignmentList = [
     Alignment.bottomLeft,
     Alignment.bottomRight,
     Alignment.topRight,
@@ -38,23 +38,6 @@ class AnimatedGradient extends HookWidget {
     return AnimateGradient(
       primaryColors: primaryColors,
       secondaryColors: secondaryColors,
-      // duration: const Duration(seconds: 4),
-      // onEnd: () {
-      //   index = index + 1;
-      //   // animate the color
-      //   topColor.value = colorList[(index + 1) % colorList.length];
-      //   bottomColor.value = colorList[index % colorList.length];
-
-      //   //// animate the alignment
-      //   // begin = alignmentList[index % alignmentList.length];
-      //   // end = alignmentList[(index + 2) % alignmentList.length];
-      // },
-      // decoration: BoxDecoration(
-      //     gradient: LinearGradient(
-      //         begin: begin,
-      //         end: end,
-      //         colors: [bottomColor.value, topColor.value])),
-
       child: child,
     );
   }

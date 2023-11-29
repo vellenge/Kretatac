@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
 import 'package:kretatac/game/application/persuasion_service.dart';
@@ -18,7 +15,7 @@ class PlayButton extends HookConsumerWidget {
       required this.width,
       required this.enableAnimation});
 
-  final Future<Null> Function()? onPressed;
+  final Future<void> Function()? onPressed;
   final Color color;
   final Widget text;
   final IconData icon;
@@ -30,7 +27,7 @@ class PlayButton extends HookConsumerWidget {
     final isConvinced =
         ref.watch(persuasionServiceProvider.notifier).isConvinced;
 
-    final double height = 60;
+    const double height = 60;
 
     return AnimatedSwitcher(
       // layoutBuilder: (currentChild, previousChildren) => ,

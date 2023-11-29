@@ -1,5 +1,4 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kretatac/game/application/can_play_service.dart';
 import 'package:kretatac/game/application/deck_service.dart';
 import 'package:kretatac/game/application/hand_service.dart';
 import 'package:kretatac/game/application/persuasion_service.dart';

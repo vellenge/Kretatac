@@ -11,12 +11,10 @@ import 'package:kretatac/commons/widgets/animated_gradient.dart';
 
 import 'package:kretatac/commons/widgets/scale_widget.dart';
 import 'package:kretatac/game/application/can_play_service.dart';
-import 'package:kretatac/game/application/deck_service.dart';
 import 'package:kretatac/game/application/game_service.dart';
 import 'package:kretatac/game/application/hand_service.dart';
 import 'package:kretatac/game/application/persuasion_service.dart';
 import 'package:kretatac/game/application/played_ideas_service.dart';
-import 'package:kretatac/game/data/deck_repository.dart';
 
 import 'package:kretatac/game/presentation/controllers/carousel_controller.dart';
 import 'package:kretatac/game/presentation/controllers/flip_controller.dart';

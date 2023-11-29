@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kretatac/therapy/data/dummy_therapies.dart';
+
 import 'package:kretatac/therapy/data/therapy_dto.dart';
 import 'package:kretatac/therapy/domain/therapy.dart';
 

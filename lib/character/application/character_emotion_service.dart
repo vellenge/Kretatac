@@ -1,5 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:kretatac/character/domain/character.dart';
+
 import 'package:kretatac/character/domain/emotions.dart';
 import 'package:kretatac/game/application/persuasion_service.dart';
 
