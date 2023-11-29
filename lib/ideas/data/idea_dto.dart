@@ -32,5 +32,5 @@ class IdeaDTO extends Notifier<List<Idea>> {
   }
 }
 
-final ideaDTOProvider =
-    NotifierProvider<IdeaDTO, List<Idea>>(() => IdeaDTO('data/ideas.csv'));
+final ideaDTOProvider = NotifierProvider<IdeaDTO, List<Idea>>(
+    () => IdeaDTO('assets/data/ideas.csv'));

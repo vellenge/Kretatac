@@ -79658,7 +79658,7 @@ break
 case 1:return A.Y(q,r)}})
 return A.Z($async$y5,r)}}
 A.axn.prototype={
-$0(){return new A.t_("data/ideas.csv")},
+$0(){return new A.t_("assets/data/ideas.csv")},
 $S:450}
 A.t0.prototype={}
 A.we.prototype={}
@@ -79853,7 +79853,7 @@ break
 case 1:return A.Y(q,r)}})
 return A.Z($async$xR,r)}}
 A.ay2.prototype={
-$0(){return new A.uA("data/therapies.csv")},
+$0(){return new A.uA("assets/data/therapies.csv")},
 $S:465}
 A.j5.prototype={}
 A.axh.prototype={

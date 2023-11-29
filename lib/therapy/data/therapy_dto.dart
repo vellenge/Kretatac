@@ -37,4 +37,4 @@ class TherapyDTO extends Notifier<List<Therapy>> {
 }
 
 final therapiesDTOProvider = NotifierProvider<TherapyDTO, List<Therapy>>(
-    () => TherapyDTO('data/therapies.csv'));
+    () => TherapyDTO('assets/data/therapies.csv'));
