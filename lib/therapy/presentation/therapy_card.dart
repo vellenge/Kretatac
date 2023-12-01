@@ -8,6 +8,9 @@ import 'package:kretatac/main.dart';
 import 'package:kretatac/therapy/domain/therapy.dart';
 
 class TherapyCard extends HookWidget {
+//TODO refacto limiting rebuilds
+//TODO enable wrapping on ideaTags to prevent overflow
+
   const TherapyCard({
     super.key,
     required this.therapy,
@@ -25,74 +28,76 @@ class TherapyCard extends HookWidget {
 
     return InkWell(
       onTap: () => isPressed.value = !isPressed.value,
-      child: AnimatedContainer(
-        curve: Curves.elasticInOut,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Sizes.p4),
-            border: Border.all(
-              width: Sizes.p4,
-            ),
-            color: Theme.of(context).colorScheme.surface,
-            boxShadow: const [BoxShadow(offset: Offset(Sizes.p4, Sizes.p4))]),
-        duration: const Duration(seconds: 1),
-        child: AnimatedSize(
-          duration: const Duration(milliseconds: 250),
-          alignment: Alignment.topCenter,
-          child: Stack(children: [
-            Positioned(
-              left: -20,
-              top: -30,
-              child: SizedBox(
-                height: 70,
-                width: 70,
-                child: OverflowBox(
-                    child: BadgeNumber(
-                  number: number,
-                )),
+      child: RepaintBoundary(
+        child: AnimatedContainer(
+          curve: Curves.elasticInOut,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Sizes.p4),
+              border: Border.all(
+                width: Sizes.p4,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  bottom: Sizes.p8, left: Sizes.p4, right: Sizes.p4),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: Sizes.p48),
-                    child: Row(children: [
+              color: Theme.of(context).colorScheme.surface,
+              boxShadow: const [BoxShadow(offset: Offset(Sizes.p4, Sizes.p4))]),
+          duration: const Duration(seconds: 1),
+          child: AnimatedSize(
+            duration: const Duration(milliseconds: 250),
+            alignment: Alignment.topCenter,
+            child: Stack(children: [
+              Positioned(
+                left: -20,
+                top: -30,
+                child: SizedBox(
+                  height: 70,
+                  width: 70,
+                  child: OverflowBox(
+                      child: BadgeNumber(
+                    number: number,
+                  )),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    bottom: Sizes.p8, left: Sizes.p4, right: Sizes.p4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: Sizes.p48),
+                      child: Row(children: [
+                        Text(
+                          therapy.name,
+                          style: Theme.of(context).textTheme.headlineMedium,
+                        )
+                      ]),
+                    ),
+                    Row(
+                      children: [
+                        Wrap(
+                          spacing: Sizes.p8,
+                          runSpacing: Sizes.p4,
+                          children: [
+                            ...ideas.map((e) => SizedBox(
+                                  child: IdeaTag(
+                                    idea: e,
+                                    isActive: true,
+                                  ),
+                                )),
+                          ],
+                        ),
+                      ],
+                    ),
+                    if (isPressed.value) ...[
+                      gapH12,
                       Text(
-                        therapy.name,
-                        style: Theme.of(context).textTheme.headlineMedium,
+                        therapy.description,
+                        textAlign: TextAlign.start,
                       )
-                    ]),
-                  ),
-                  Row(
-                    children: [
-                      Wrap(
-                        spacing: Sizes.p8,
-                        runSpacing: Sizes.p4,
-                        children: [
-                          ...ideas.map((e) => SizedBox(
-                                child: IdeaTag(
-                                  idea: e,
-                                  isActive: true,
-                                ),
-                              )),
-                        ],
-                      ),
-                    ],
-                  ),
-                  if (isPressed.value) ...[
-                    gapH12,
-                    Text(
-                      therapy.description,
-                      textAlign: TextAlign.start,
-                    )
-                  ]
-                ],
+                    ]
+                  ],
+                ),
               ),
-            ),
-          ]),
+            ]),
+          ),
         ),
       ),
     );

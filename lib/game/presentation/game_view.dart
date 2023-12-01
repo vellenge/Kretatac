@@ -143,16 +143,14 @@ class GameView extends HookConsumerWidget {
                   ),
                   Flexible(
                     flex: 5,
-                    child: CarouselSlider.builder(
-                        carouselController: _controller,
-                        itemCount: handValue.length,
-                        itemBuilder: (context, index, realIndex) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child: Motion(
-                              controller: MotionController(),
-                              glare: GlareConfiguration.fromElevation(6),
-                              shadow: null,
+                    child: RepaintBoundary(
+                      child: CarouselSlider.builder(
+                          carouselController: _controller,
+                          itemCount: handValue.length,
+                          itemBuilder: (context, index, realIndex) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 2),
                               child: ScaleWidget(
                                 isActive: index == currentIndex.value,
                                 duration: const Duration(milliseconds: 2500),
@@ -160,23 +158,23 @@ class GameView extends HookConsumerWidget {
                                   idea: handValue[index]!,
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                        options: CarouselOptions(
-                          initialPage:
-                              currentIndex.value! > handValue.length - 1
-                                  ? handValue.length - 1
-                                  : currentIndex.value!,
-                          animateToClosest: false,
-                          enableInfiniteScroll: false,
-                          viewportFraction: 0.8,
-                          enlargeCenterPage: true,
-                          height: 600,
-                          scrollDirection: Axis.horizontal,
-                          onPageChanged: (index, reason) =>
-                              currentIndex.value = index,
-                        )),
+                            );
+                          },
+                          options: CarouselOptions(
+                            initialPage:
+                                currentIndex.value! > handValue.length - 1
+                                    ? handValue.length - 1
+                                    : currentIndex.value!,
+                            animateToClosest: false,
+                            enableInfiniteScroll: false,
+                            viewportFraction: 0.8,
+                            enlargeCenterPage: true,
+                            height: 600,
+                            scrollDirection: Axis.horizontal,
+                            onPageChanged: (index, reason) =>
+                                currentIndex.value = index,
+                          )),
+                    ),
                   ),
                   Flexible(
                     flex: 1,

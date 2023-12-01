@@ -35,10 +35,12 @@ class AnimatedGradient extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimateGradient(
-      primaryColors: primaryColors,
-      secondaryColors: secondaryColors,
-      child: child,
+    return RepaintBoundary(
+      child: AnimateGradient(
+        primaryColors: primaryColors,
+        secondaryColors: secondaryColors,
+        child: child,
+      ),
     );
   }
 }

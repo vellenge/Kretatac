@@ -29,13 +29,15 @@ class ScaleWidget extends HookWidget {
     final scaleAnim =
         Tween<double>(begin: scaleDown ?? 0.96, end: 0.99).animate(controller);
 
-    return AnimatedBuilder(
-        animation: scaleAnim,
-        child: child,
-        builder: (context, child) => Transform.scale(
-              filterQuality: FilterQuality.low,
-              scale: isActive ? scaleAnim.value : 1,
-              child: child,
-            ));
+    return RepaintBoundary(
+      child: AnimatedBuilder(
+          animation: scaleAnim,
+          child: child,
+          builder: (context, child) => Transform.scale(
+                filterQuality: FilterQuality.low,
+                scale: isActive ? scaleAnim.value : 1,
+                child: child,
+              )),
+    );
   }
 }

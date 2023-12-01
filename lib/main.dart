@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:kretatac/home/presentation/home_view.dart';
@@ -15,6 +16,8 @@ Future<void> main() async {
   await container.read(ideaDTOProvider.notifier).getIdeas();
   container.read(therapiesDTOProvider);
   await container.read(therapiesDTOProvider.notifier).getTherapies();
+
+  debugRepaintRainbowEnabled = true;
 
   // container.read(deckRepositoryProvider);
   // container.read(deckServiceProvider);
