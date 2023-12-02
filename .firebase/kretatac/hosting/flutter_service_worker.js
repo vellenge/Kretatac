@@ -3,8 +3,8 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "7b3383a3e4d50a9ab0d2598f12d9deea",
-"assets/AssetManifest.json": "dfc2a5912fe17ee0c76c2fbb594e8300",
+const RESOURCES = {"assets/AssetManifest.bin": "0c534b8c5a07ba9b850f7dde67658d3f",
+"assets/AssetManifest.json": "f917b3302f8a14dc52c6742df3bb5e4f",
 "assets/assets/animations/arrow.riv": "339ed249196bfd272520f67e2968eb46",
 "assets/assets/data/ideas.csv": "9b1123389b58991ff677955d3695f625",
 "assets/assets/data/therapies.csv": "15c2e13f2434d32a0cac78f818b7f580",
@@ -18,6 +18,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "7b3383a3e4d50a9ab0d2598f12d9deea
 "assets/assets/images/mire.png": "a22585611a1342277d1ae1266bcbe566",
 "assets/assets/images/mire.svg": "0fa198c59be5118ffeb5a16518c7f977",
 "assets/assets/images/mire2.svg": "a7626994eb7624b033e19d48e97c13b9",
+"assets/assets/images/nature.png": "6636a0e8e1c312cd3635de47b76ea901",
 "assets/assets/images/sadness.svg": "feff3249967e47f0877c15ca1661d851",
 "assets/assets/images/satisfied.svg": "bdaef98ec3e733695452f7ad52c22bd1",
 "assets/assets/images/star.svg": "54f3906ae095fec6416e5d02f40feeb9",
@@ -43,9 +44,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "7b3383a3e4d50a9ab0d2598f12d9deea
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "830976612bb51aa6377525f34ed35bad",
-"/": "830976612bb51aa6377525f34ed35bad",
-"main.dart.js": "e1b8fd524dac61d5839f8f459d99e0f2",
+"index.html": "34f55a6fa9cdb2be8962158e2c45ef09",
+"/": "34f55a6fa9cdb2be8962158e2c45ef09",
+"main.dart.js": "0596c268232328897ba160f6901cc580",
 "manifest.json": "ea99071c259876944893c69090053e5c",
 "version.json": "bc7932695cd2ae468fc1b48ca88c608c"};
 // The application shell files that are downloaded before a service worker can
