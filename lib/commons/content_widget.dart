@@ -12,7 +12,7 @@ class ContentWidget extends StatelessWidget {
 
   final String title;
   final String subtitle;
-  final String? artwork;
+  final Image? artwork;
   final String description;
 
   @override
@@ -22,13 +22,13 @@ class ContentWidget extends StatelessWidget {
         return Column(children: [
           Container(
             height: constraints.maxHeight * 0.1,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                  // topLeft: Radius.circular(Sizes.p4),
-                  // topRight: Radius.circular(Sizes.p4),
-                  ),
-              color: Theme.of(context).colorScheme.onBackground,
-            ),
+            // decoration: BoxDecoration(
+            //   borderRadius: const BorderRadius.only(
+            //       // topLeft: Radius.circular(Sizes.p4),
+            //       // topRight: Radius.circular(Sizes.p4),
+            //       ),
+            // ),
+            color: Theme.of(context).colorScheme.onBackground,
             alignment: Alignment.center,
             child: Text(
               title,
@@ -39,14 +39,10 @@ class ContentWidget extends StatelessWidget {
             ),
           ),
           Container(
+              width: double.infinity,
               color: Theme.of(context).colorScheme.tertiary,
               height: constraints.maxHeight * 0.25,
-              child: artwork != null
-                  ? Image.asset(
-                      artwork!,
-                      fit: BoxFit.fill,
-                    )
-                  : null),
+              child: artwork),
           gapH12,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Sizes.p12),

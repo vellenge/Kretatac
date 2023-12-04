@@ -17,7 +17,7 @@ Future<void> main() async {
   container.read(therapiesDTOProvider);
   await container.read(therapiesDTOProvider.notifier).getTherapies();
 
-  debugRepaintRainbowEnabled = true;
+  // debugRepaintRainbowEnabled = true;
 
   // container.read(deckRepositoryProvider);
   // container.read(deckServiceProvider);
@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(
                   seedColor: const Color.fromARGB(255, 243, 128, 5),
                   primary: const Color.fromARGB(255, 255, 77, 7)),
+              cardColor: Color.fromARGB(255, 251, 234, 232),
               dividerColor: Colors.transparent,
               useMaterial3: true,
             ),

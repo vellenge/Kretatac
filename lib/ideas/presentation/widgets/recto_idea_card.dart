@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
+import 'package:kretatac/ideas/domain/get_asset_image_widget.dart';
 import 'package:kretatac/ideas/domain/idea.dart';
 import 'package:kretatac/ideas/presentation/widgets/cost_widget.dart';
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
@@ -25,12 +26,7 @@ class RectoIdeaWidget extends StatelessWidget {
             child: Container(
                 clipBehavior: Clip.none,
                 color: Theme.of(context).colorScheme.error,
-                child: idea.artwork != null
-                    ? Image.asset(
-                        idea.artwork!,
-                        fit: BoxFit.cover,
-                      )
-                    : null),
+                child: idea.getAssetImageWidget()),
           ),
           showCost
               ? CostWidget(

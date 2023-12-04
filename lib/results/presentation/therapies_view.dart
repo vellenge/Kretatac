@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
 import 'package:kretatac/commons/widgets/animated_gradient.dart';
 import 'package:kretatac/commons/widgets/neu_text.dart';
+import 'package:kretatac/game/application/played_ideas_service.dart';
 import 'package:kretatac/ideas/data/dummy_ideas.dart';
 import 'package:kretatac/ideas/presentation/widgets/recto_idea_card.dart';
 import 'package:kretatac/match/application/match_service.dart';
@@ -15,6 +16,7 @@ class TherapiesView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final played = ref.watch(playedIdeasServiceProvider);
     final tac = ref.watch(tacProvider);
     final matches = ref.read(matchesProvider);
     debugPrint(matches.length.toString());
@@ -43,7 +45,7 @@ class TherapiesView extends HookConsumerWidget {
                 gapH16,
                 Wrap(
                   spacing: Sizes.p4,
-                  children: dummyIdeas
+                  children: played
                       .map((e) => SizedBox(
                             width: 60,
                             child: Hero(

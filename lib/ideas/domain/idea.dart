@@ -11,6 +11,7 @@ class Idea {
       required this.description,
       required this.subtitle,
       this.artwork,
+      this.artwork_url,
       required this.persuasion})
       : id = uuid.v4();
 
@@ -21,6 +22,7 @@ class Idea {
   final String description;
   final String subtitle;
   final String? artwork;
+  final String? artwork_url;
 
   Idea.fromCsvRow(Map<String, dynamic> csvMap)
       : name = csvMap["name"].toString().capitalizeOnlyFirstLetter(),
@@ -29,7 +31,8 @@ class Idea {
             csvMap["description"].toString().capitalizeOnlyFirstLetter(),
         subtitle = csvMap["subtitle"].toString().capitalizeOnlyFirstLetter(),
         persuasion = double.tryParse(csvMap["persuasion"]) ?? 0.1,
-        artwork = null,
+        artwork = (csvMap["artwork"])?.toString(),
+        artwork_url = csvMap["artwork_url"]?.toString(),
         id = uuid.v4();
 
   @override

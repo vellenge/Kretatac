@@ -14,7 +14,7 @@ class CSVParser {
     debugPrint('processCsv triggered');
     var result = await rootBundle.loadString(path);
 
-    final request = type != null ? await Dio().get(type?.url ?? '') : null;
+    final request = type != null ? await Dio().get(type!.url) : null;
     if (request != null || request?.statusCode == 200) {
       print("${request!.statusCode} for $type");
 
@@ -23,7 +23,7 @@ class CSVParser {
 
     return const CsvToListConverter().convert(
       result,
-      convertEmptyTo: "plouf",
+      convertEmptyTo: null,
       shouldParseNumbers: false,
     );
   }

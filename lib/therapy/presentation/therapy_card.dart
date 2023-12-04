@@ -70,20 +70,16 @@ class TherapyCard extends HookWidget {
                         )
                       ]),
                     ),
-                    Row(
+                    Wrap(
+                      spacing: Sizes.p8,
+                      runSpacing: Sizes.p4,
                       children: [
-                        Wrap(
-                          spacing: Sizes.p8,
-                          runSpacing: Sizes.p4,
-                          children: [
-                            ...ideas.map((e) => SizedBox(
-                                  child: IdeaTag(
-                                    idea: e,
-                                    isActive: true,
-                                  ),
-                                )),
-                          ],
-                        ),
+                        ...ideas.map((e) => SizedBox(
+                              child: IdeaTag(
+                                idea: e,
+                                isActive: true,
+                              ),
+                            )),
                       ],
                     ),
                     if (isPressed.value) ...[

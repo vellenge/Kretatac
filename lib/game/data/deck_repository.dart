@@ -17,6 +17,6 @@ class DeckRepository {
 
 final deckRepositoryProvider = Provider<DeckRepository>((ref) {
   final ideas = ref.watch(getIdeasListProvider);
-  print(" ideas in DECKREPO are $ideas");
+  // print(" ideas in DECKREPO are $ideas");
   return DeckRepository(ideas: ideas);
 });
