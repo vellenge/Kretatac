@@ -35,8 +35,9 @@ class WalletWidget extends HookConsumerWidget {
     return AnimatedBuilder(
       animation: colorAnim,
       builder: (context, child) => CostWidget(
-        height: 80,
-        width: 80,
+        sizeFactor: 0.8,
+        height: 70,
+        width: 70,
         sides: 8,
         color: isEmpty ? colorAnim.value : endColor,
         cost: walletValue,

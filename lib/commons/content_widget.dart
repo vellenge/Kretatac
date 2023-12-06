@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
+import 'package:kretatac/ideas/presentation/widgets/idea_type_tag.dart';
 
 class ContentWidget extends StatelessWidget {
   const ContentWidget({
@@ -7,6 +8,7 @@ class ContentWidget extends StatelessWidget {
     required this.title,
     required this.subtitle,
     this.artwork,
+    this.tag,
     required this.description,
   });
 
@@ -14,6 +16,7 @@ class ContentWidget extends StatelessWidget {
   final String subtitle;
   final Image? artwork;
   final String description;
+  final IdeaTypeTagWidget? tag;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +25,6 @@ class ContentWidget extends StatelessWidget {
         return Column(children: [
           Container(
             height: constraints.maxHeight * 0.1,
-            // decoration: BoxDecoration(
-            //   borderRadius: const BorderRadius.only(
-            //       // topLeft: Radius.circular(Sizes.p4),
-            //       // topRight: Radius.circular(Sizes.p4),
-            //       ),
-            // ),
             color: Theme.of(context).colorScheme.onBackground,
             alignment: Alignment.center,
             child: Text(
@@ -38,11 +35,20 @@ class ContentWidget extends StatelessWidget {
                   .copyWith(color: Theme.of(context).colorScheme.background),
             ),
           ),
-          Container(
+          Stack(clipBehavior: Clip.none, children: [
+            Container(
               width: double.infinity,
               color: Theme.of(context).colorScheme.tertiary,
               height: constraints.maxHeight * 0.25,
-              child: artwork),
+              child: artwork,
+            ),
+            if (tag != null)
+              Positioned(
+                bottom: -4,
+                right: -5,
+                child: tag!,
+              ),
+          ]),
           gapH12,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: Sizes.p12),
@@ -51,7 +57,10 @@ class ContentWidget extends StatelessWidget {
               child: Column(
                 children: [
                   Text(subtitle,
-                      style: Theme.of(context).textTheme.titleMedium),
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontWeight: FontWeight.bold)),
                   gapH8,
                   Expanded(
                       child: ListView(children: [

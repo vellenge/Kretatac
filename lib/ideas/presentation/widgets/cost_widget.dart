@@ -8,6 +8,7 @@ class CostWidget extends StatelessWidget {
       this.height = 60,
       this.width = 60,
       this.sides = 6,
+      this.sizeFactor = 1,
       this.color});
 
   final int cost;
@@ -15,6 +16,7 @@ class CostWidget extends StatelessWidget {
   final double width;
   final int? sides;
   final Color? color;
+  final double? sizeFactor;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class CostWidget extends StatelessWidget {
         child: Text(
           cost.toString(),
           style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              fontSize: ratio * 40,
+              fontSize: ratio * sizeFactor! * 40,
               color: Theme.of(context).colorScheme.onBackground,
               fontWeight: FontWeight.bold),
         ),

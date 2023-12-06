@@ -21,7 +21,7 @@ class IdeaDTO extends Notifier<List<Idea>> {
     for (final row in csv) {
       ideas.add(Idea.fromCsvRow(row));
     }
-    debugPrint("Ideas list is  ${ideas.length.toString()}");
+    // debugPrint("Ideas list is  ${ideas.length.toString()}");
     state = ideas;
     print(state.length);
   }

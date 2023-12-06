@@ -40,7 +40,7 @@ class JaugeWidget extends ConsumerWidget {
     return Stack(children: [
       Container(
         width: width,
-        height: Sizes.p48,
+        height: 40,
         decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(Sizes.p12),

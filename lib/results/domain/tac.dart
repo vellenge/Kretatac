@@ -27,7 +27,7 @@ class Tac {
   final String core;
   final String suffix;
 
-  String get name => eraseDoubleLetters(prefix + core + suffix);
+  String get name => prefix + core + suffix;
 
 //TODO refacto eraseDoubleLetters
   String eraseDoubleLetters(String string) {

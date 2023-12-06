@@ -6,23 +6,23 @@ extension GetAssetImageWidget on Idea {
     const BoxFit fit = BoxFit.cover;
 
     final bool isNetworkValid =
-        artwork_url != null && artwork_url!.startsWith('http');
+        artworkUrl != null && artworkUrl!.startsWith('http');
 
     final networkWidget = Image.network(
-      artwork_url!,
+      artworkUrl!,
       fit: fit,
       errorBuilder: (context, error, stackTrace) {
-        debugPrint(error.toString());
+        print(error.toString());
         return const Text("Échec d'obtention de l'image depuis le réseau");
       },
     );
 
     return artwork != null && artwork != ''
         ? Image.asset(
-            "images/${artwork!}",
+            "assets/images/${artwork!}",
             fit: fit,
             errorBuilder: (context, error, stackTrace) {
-              debugPrint(error.toString());
+              print(error.toString());
               return isNetworkValid
                   ? networkWidget
                   : const Text(

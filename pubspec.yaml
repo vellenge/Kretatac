@@ -57,6 +57,8 @@ dependencies:
   csv: ^5.1.1
   http: ^1.1.0
   dio: ^5.3.4
+  onboarding_overlay: ^3.2.1
+  defer_pointer: ^0.0.2
 
 dev_dependencies:
   flutter_test:

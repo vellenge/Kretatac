@@ -15,7 +15,7 @@ class RectoIdeaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double size = 60;
+    const double size = 40;
 
     return InkWell(
       onTap: onPressed,
@@ -30,6 +30,7 @@ class RectoIdeaWidget extends StatelessWidget {
           ),
           showCost
               ? CostWidget(
+                  sizeFactor: 0.5,
                   cost: idea.cost,
                   height: size,
                   width: size,

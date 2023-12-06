@@ -46,7 +46,7 @@ class DeckService extends Notifier<List<Idea>> {
     if (idea != null) {
       state = state.where((element) => element.id != idea.id).toList();
     }
-    print(idea);
+    // print(idea);
     return idea;
   }
 }

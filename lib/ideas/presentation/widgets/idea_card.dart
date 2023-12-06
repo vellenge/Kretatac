@@ -4,6 +4,7 @@ import 'package:kretatac/commons/content_widget.dart';
 import 'package:kretatac/ideas/domain/get_asset_image_widget.dart';
 import 'package:kretatac/ideas/domain/idea.dart';
 import 'package:kretatac/ideas/presentation/widgets/cost_widget.dart';
+import 'package:kretatac/ideas/presentation/widgets/idea_type_tag.dart';
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
 class IdeaCard extends StatelessWidget {
@@ -86,12 +87,16 @@ class MyNeuContainer extends StatelessWidget {
               subtitle: idea.subtitle,
               description: idea.description,
               artwork: idea.getAssetImageWidget(),
+              tag: IdeaTypeTagWidget(idea: idea),
             ),
             Positioned(
               right: Sizes.p4,
               top: Sizes.p32,
               // bottom: Sizes.p64,
-              child: CostWidget(cost: idea.cost),
+              child:
+                  Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                CostWidget(cost: idea.cost),
+              ]),
             )
           ]),
         ),

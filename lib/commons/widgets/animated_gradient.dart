@@ -4,9 +4,12 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 //Original Widget from SeriForte : https://stackoverflow.com/users/13728029/seriforte
 // https://stackoverflow.com/a/62371080/22135106
+//Modified to use flutter hooks
 
 class AnimatedGradient extends HookWidget {
-  AnimatedGradient({super.key, required this.child});
+  AnimatedGradient({super.key, required this.child, this.runAnimation = false});
+
+  final bool runAnimation;
 
   final Widget child;
 
@@ -35,12 +38,25 @@ class AnimatedGradient extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RepaintBoundary(
-      child: AnimateGradient(
-        primaryColors: primaryColors,
-        secondaryColors: secondaryColors,
-        child: child,
-      ),
-    );
+    return runAnimation
+        ? RepaintBoundary(
+            child: AnimateGradient(
+              primaryColors: primaryColors,
+              secondaryColors: secondaryColors,
+              child: child,
+            ),
+          )
+        : Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                  Color.fromARGB(255, 227, 172, 157),
+                  Color.fromARGB(255, 227, 179, 157),
+                  Color.fromARGB(255, 241, 209, 165),
+                  Color.fromARGB(255, 221, 186, 189)
+                ])),
+            child: child);
   }
 }

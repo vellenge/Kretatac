@@ -12,7 +12,7 @@ class WalletAndJaugeWidget extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: 80,
+      height: 70,
       child: Stack(alignment: Alignment.center, children: [
         Padding(
           padding: const EdgeInsets.only(left: Sizes.p12, right: Sizes.p64),

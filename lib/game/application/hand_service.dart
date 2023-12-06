@@ -25,7 +25,7 @@ class HandService extends Notifier<List<Idea?>> {
       }
     }
     state = hand;
-    print("hand is $state");
+    // print("hand is $state");
   }
 
   void setHand(List<Idea?> newIdeas) {

@@ -21,6 +21,8 @@ import 'package:kretatac/commons/widgets/scale_widget.dart';
 import 'package:kretatac/game/application/hand_service.dart';
 
 import 'package:kretatac/game/presentation/game_view.dart';
+import 'package:kretatac/onboarding/presentation/onboarding_widget.dart';
+// import 'package:kretatac/onboarding/presentation/onboarding_widget.dart';
 
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
@@ -183,11 +185,15 @@ class StartButtonCTA extends HookConsumerWidget {
       child: NeuTextButton(
           onPressed: () {
             ref.read(handServiceNotifierProvider.notifier).getHand();
+            ref.read(screenSwitcherProvider.notifier).state = true;
 
-            isPressed = true;
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (context) => const GameView(),
-            ));
+            // isPressed = true;
+            // Navigator.of(context).pushAndRemoveUntil(
+            //   MaterialPageRoute(
+            //     builder: (context) => OnBoardingWidget(child: const GameView()),
+            //   ),
+            //   (route) => 1 == 2,
+            // );
           },
           buttonColor: isPressed ? pressedColor : restColor,
           borderRadius: BorderRadius.circular(Sizes.p16),

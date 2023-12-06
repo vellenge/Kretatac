@@ -9,7 +9,6 @@ import 'package:kretatac/therapy/domain/therapy.dart';
 
 class TherapyCard extends HookWidget {
 //TODO refacto limiting rebuilds
-//TODO enable wrapping on ideaTags to prevent overflow
 
   const TherapyCard({
     super.key,

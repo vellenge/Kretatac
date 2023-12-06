@@ -1,7 +1,19 @@
+import 'dart:ui' show Color;
+
 import 'package:kretatac/commons/utils/capitalize_first_letter.dart';
+import 'package:kretatac/ideas/domain/get_idea_type.dart';
 import 'package:uuid/uuid.dart';
 
 const uuid = Uuid();
+
+enum IdeaType {
+  argument('Argument', Color.fromARGB(255, 255, 0, 122)),
+  carac('Attribut', Color.fromARGB(255, 0, 117, 184));
+
+  const IdeaType(this.type, this.color);
+  final String type;
+  final Color color;
+}
 
 class Idea {
   Idea(
@@ -11,7 +23,8 @@ class Idea {
       required this.description,
       required this.subtitle,
       this.artwork,
-      this.artwork_url,
+      this.artworkUrl,
+      this.typeString = '',
       required this.persuasion})
       : id = uuid.v4();
 
@@ -22,7 +35,10 @@ class Idea {
   final String description;
   final String subtitle;
   final String? artwork;
-  final String? artwork_url;
+  final String? artworkUrl;
+  final String typeString;
+
+  IdeaType get enumType => getIdeaType(typeString);
 
   Idea.fromCsvRow(Map<String, dynamic> csvMap)
       : name = csvMap["name"].toString().capitalizeOnlyFirstLetter(),
@@ -32,7 +48,8 @@ class Idea {
         subtitle = csvMap["subtitle"].toString().capitalizeOnlyFirstLetter(),
         persuasion = double.tryParse(csvMap["persuasion"]) ?? 0.1,
         artwork = (csvMap["artwork"])?.toString(),
-        artwork_url = csvMap["artwork_url"]?.toString(),
+        artworkUrl = csvMap["artwork_url"]?.toString(),
+        typeString = csvMap["type"]?.toString() ?? 'arg',
         id = uuid.v4();
 
   @override

@@ -10,7 +10,7 @@ class DeckRepository {
   List<Idea> getDeck() {
     final deck = ideas;
     deck!.shuffle();
-    print(deck);
+    // print(deck);
     return deck;
   }
 }

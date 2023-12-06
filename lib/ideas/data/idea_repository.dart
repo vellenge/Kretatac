@@ -43,7 +43,7 @@ class FakeIdeasRepository extends IdeaRepository {
 
 final ideaRepositoryProvider = Provider<IdeaRepository>((ref) {
   final ideas = ref.watch(ideaDTOProvider);
-  print("ideas in ideaRepoProvider are $ideas");
+  // print("ideas in ideaRepoProvider are $ideas");
   return FakeIdeasRepository(ideasList: ideas);
 });
 
