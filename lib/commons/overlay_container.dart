@@ -95,22 +95,16 @@ class _OverlayContainerState extends State<OverlayContainer>
 
   void _show() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      if (true) {
-        _overlayEntry = _buildOverlayEntry();
-        Overlay.of(context).insert(_overlayEntry);
-      } else {
-        _overlayEntry.markNeedsBuild();
-      }
+      _overlayEntry = _buildOverlayEntry();
+      Overlay.of(context).insert(_overlayEntry);
     });
   }
 
   void _hide() {
-    if (_overlayEntry != null) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        _overlayEntry.remove();
-        // _overlayEntry = null;
-      });
-    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _overlayEntry.remove();
+      // _overlayEntry = null;
+    });
   }
 
   @override

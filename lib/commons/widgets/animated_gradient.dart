@@ -6,6 +6,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 // https://stackoverflow.com/a/62371080/22135106
 //Modified to use flutter hooks
 
+// ignore: must_be_immutable
 class AnimatedGradient extends HookWidget {
   AnimatedGradient({super.key, required this.child, this.runAnimation = false});
 

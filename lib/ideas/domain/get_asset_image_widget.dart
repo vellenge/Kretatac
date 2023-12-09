@@ -12,7 +12,7 @@ extension GetAssetImageWidget on Idea {
       artworkUrl!,
       fit: fit,
       errorBuilder: (context, error, stackTrace) {
-        print(error.toString());
+        debugPrint(error.toString());
         return const Text("Échec d'obtention de l'image depuis le réseau");
       },
     );
@@ -22,7 +22,7 @@ extension GetAssetImageWidget on Idea {
             "assets/images/${artwork!}",
             fit: fit,
             errorBuilder: (context, error, stackTrace) {
-              print(error.toString());
+              debugPrint(error.toString());
               return isNetworkValid
                   ? networkWidget
                   : const Text(

@@ -17,13 +17,8 @@ import 'package:kretatac/commons/widgets/mire_rotation_widget.dart';
 import 'package:kretatac/commons/widgets/neu_text.dart';
 
 import 'package:kretatac/commons/widgets/scale_widget.dart';
-
 import 'package:kretatac/game/application/hand_service.dart';
-
-import 'package:kretatac/game/presentation/game_view.dart';
 import 'package:kretatac/onboarding/presentation/onboarding_widget.dart';
-// import 'package:kretatac/onboarding/presentation/onboarding_widget.dart';
-
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
 class HomeView extends HookConsumerWidget {
@@ -86,9 +81,36 @@ class HomeView extends HookConsumerWidget {
                                     child: Padding(
                                         padding: const EdgeInsets.all(Sizes.p8),
                                         child: ListView(children: [
+                                          Text.rich(TextSpan(children: [
+                                            const TextSpan(text: 'Les'),
+                                            WidgetSpan(
+                                                child: SizedBox(
+                                              height: 50,
+                                              width: 50,
+                                              child: Image.asset(
+                                                  'assets/images/logo_mini.png'),
+                                            )),
+                                            TextSpan(
+                                                text:
+                                                    ref.watch(defTextProvider))
+                                          ])),
+                                          // NeuText(
+                                          //   fontSize: 20,
+                                          //   text: ref.watch(defTextProvider),
+                                          //   // style: themeData
+                                          //   //     .textTheme.bodyLarge!
+                                          //   //     .copyWith(
+                                          //   //         fontWeight:
+                                          //   //             FontWeight.bold)
+                                          // ),
+                                          gapH12,
                                           Text(ref.watch(introTextProvider),
-                                              style: themeData
-                                                  .textTheme.bodyLarge),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyLarge!
+                                                  .copyWith(
+                                                      fontWeight:
+                                                          FontWeight.bold)),
                                           gapH12,
                                           SizedOverflowBox(
                                             size: const Size(800, 150),
@@ -97,9 +119,9 @@ class HomeView extends HookConsumerWidget {
                                             // maxHeight: 400,
                                             // maxWidth: 600,
                                             child: Transform.rotate(
-                                              angle: -pi / 12,
+                                              angle: -pi / 30,
                                               child: NeuText(
-                                                  fontSize: 50,
+                                                  fontSize: 25,
                                                   text: ref.watch(
                                                       problemTextProvider)),
                                             ),
@@ -160,6 +182,7 @@ class StarterWidget extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class StartButtonCTA extends HookConsumerWidget {
   StartButtonCTA({
     super.key,

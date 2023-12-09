@@ -23,7 +23,7 @@ class MatchMaker {
             .add(MatchedTherapy(therapy: therapy, matchedIdeas: matchedIdeas));
       }
     }
-    print(" matches length is ${matches.length}");
+    debugPrint(" matches length is ${matches.length}");
     return matches;
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
-import 'package:kretatac/main.dart';
+import 'package:kretatac/commons/themes/extended_colors.dart';
 
 class NeuText extends StatelessWidget {
   const NeuText({super.key, required this.text, this.fontSize, this.color});

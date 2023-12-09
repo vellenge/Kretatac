@@ -4,9 +4,10 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
 import 'package:kretatac/commons/star_container.dart';
+import 'package:kretatac/commons/themes/extended_colors.dart';
 import 'package:kretatac/commons/widgets/neu_text.dart';
 import 'package:kretatac/game/application/persuasion_service.dart';
-import 'package:kretatac/main.dart';
+
 import 'package:kretatac/results/presentation/tac_view.dart';
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
-import 'package:kretatac/main.dart';
+import 'package:kretatac/commons/themes/extended_colors.dart';
+
 import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
 class StepWidget extends StatelessWidget {

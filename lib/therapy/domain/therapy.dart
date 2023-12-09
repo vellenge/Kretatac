@@ -31,7 +31,7 @@ class Therapy {
 List<Idea> getIdeasFromCsvMapEntry(
     List<String> csvIdeas, List<Idea> ideaLibrary) {
   final List<Idea> result = [];
-  print('Ideas objets');
+
   // print(ideaLibrary.map((e) => e.name));
   for (final entry in csvIdeas) {
     Idea? newIdea;

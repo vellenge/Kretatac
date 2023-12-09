@@ -9,7 +9,7 @@ class DeckService extends Notifier<List<Idea>> {
 
   @override
   List<Idea> build() {
-    print("DeckService is building");
+    // print("DeckService is building");
     return ref.read(deckRepositoryProvider).getDeck();
   }
 

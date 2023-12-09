@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_polygon/flutter_polygon.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
+import 'package:kretatac/commons/themes/extended_colors.dart';
 import 'package:kretatac/ideas/domain/idea.dart';
 import 'package:kretatac/ideas/presentation/widgets/idea_tag.dart';
-import 'package:kretatac/main.dart';
+
 import 'package:kretatac/therapy/domain/therapy.dart';
 
 class TherapyCard extends HookWidget {
-//TODO refacto limiting rebuilds
-
   const TherapyCard({
     super.key,
     required this.therapy,
@@ -62,13 +61,17 @@ class TherapyCard extends HookWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: Sizes.p48),
-                      child: Row(children: [
+                      child: Wrap(children: [
                         Text(
                           therapy.name,
-                          style: Theme.of(context).textTheme.headlineMedium,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(),
                         )
                       ]),
                     ),
+                    gapH4,
                     Wrap(
                       spacing: Sizes.p8,
                       runSpacing: Sizes.p4,

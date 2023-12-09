@@ -26,7 +26,6 @@ class _OverlayWidgetState extends State<OverlayWidget> {
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
     removeOverlay();
   }
@@ -51,7 +50,7 @@ class _OverlayWidgetState extends State<OverlayWidget> {
     var parentPosition = renderBox.localToGlobal(Offset.zero);
 
     overlay = _overlayEntryBuilder(parentPosition, parentSize);
-    Overlay.of(context)!.insert(overlay!);
+    Overlay.of(context).insert(overlay!);
   }
 
   void removeOverlay() {
@@ -67,8 +66,7 @@ class _OverlayWidgetState extends State<OverlayWidget> {
         return Positioned(
             left: widget.horizontalOffset,
             top: widget.verticalOffset,
-            child:
-                GestureDetector(onTap: () => dispose(), child: widget.child));
+            child: widget.child);
 
         // return Stack(
         //   clipBehavior: Clip.none,

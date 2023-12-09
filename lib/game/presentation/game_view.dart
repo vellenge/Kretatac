@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'dart:async';
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -9,6 +11,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kretatac/character/widget/character_widget.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
+import 'package:kretatac/commons/themes/extended_colors.dart';
 import 'package:kretatac/commons/widgets/animated_gradient.dart';
 
 import 'package:kretatac/commons/widgets/scale_widget.dart';
@@ -32,6 +35,7 @@ import 'package:kretatac/onboarding/data/onboarding_steps.dart';
 
 import 'package:onboarding_overlay/onboarding_overlay.dart';
 
+// ignore: must_be_immutable
 class GameView extends HookConsumerWidget {
   GameView({super.key});
 
@@ -173,7 +177,8 @@ class GameView extends HookConsumerWidget {
                       Flexible(
                         flex: 5,
                         child: Focus(
-                          focusNode: onBoardingNodes[1],
+                          descendantsAreTraversable: true,
+                          descendantsAreFocusable: true,
                           child: RepaintBoundary(
                             child: CarouselSlider.builder(
                                 carouselController: _controller,
@@ -254,72 +259,78 @@ class GameView extends HookConsumerWidget {
                         ),
                       ),
                       gapH8,
-                      SizedBox(
-                        height: 60,
-                        width: double.infinity,
-                        child: ClipRect(
-                          clipBehavior: Clip.hardEdge,
-                          child: Row(
-                            children: [
-                              Container(
-                                  decoration: BoxDecoration(
-                                      border: Border.all(
-                                          strokeAlign:
-                                              BorderSide.strokeAlignInside,
-                                          width: Sizes.p4),
-                                      borderRadius:
-                                          BorderRadius.circular(Sizes.p4)),
-                                  width: 80,
-                                  child: const DrawDeckAnimation()),
-                              Expanded(
-                                child: ListView(
-                                  scrollDirection: Axis.horizontal,
+                      Focus(
+                        focusNode: overlayKeys[1],
+                        child: SizedBox(
+                          height: 60,
+                          width: double.infinity,
+                          child: ClipRect(
+                            clipBehavior: Clip.hardEdge,
+                            child: Row(
+                              children: [
+                                Container(
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            strokeAlign:
+                                                BorderSide.strokeAlignInside,
+                                            width: Sizes.p4),
+                                        borderRadius:
+                                            BorderRadius.circular(Sizes.p4)),
+                                    width: 80,
+                                    child: const DrawDeckAnimation()),
+                                Expanded(
+                                  child: ListView(
+                                    scrollDirection: Axis.horizontal,
 
-                                  // itemCount: handValue.length,
-                                  children: handValue
-                                      .map((idea) => Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: Sizes.p4),
-                                            child: SizedBox(
-                                              width: 60,
-                                              child: RectoIdeaWidget(
-                                                  idea: idea!,
-                                                  onPressed: () async {
-                                                    await _controller
-                                                        .animateToPage(handValue
-                                                            .indexOf(idea));
-                                                  }),
-                                            ),
-                                          )
-                                              .animate(
-                                                  onComplete: (controller) {
-                                                    debugPrint(
-                                                        "card flip has completed");
-                                                    mustDrawFlip.value = false;
-                                                  },
-                                                  // autoPlay: false,
-                                                  controller: flipController)
-                                              .flipH(
-                                                  begin:
-                                                      handValue.indexOf(idea) !=
-                                                                  0 &&
-                                                              mustDrawFlip.value
-                                                          ? 0
-                                                          : 1))
-                                      .toList()
-                                      .animate(
-                                        delay: 200.ms,
-                                        interval: 200.ms,
-                                        onComplete: (controller) {
-                                          // controller.reset();
-                                          debugPrint(
-                                              "animate list has completed");
-                                        },
-                                      )
-                                      .flipH(),
+                                    // itemCount: handValue.length,
+                                    children: handValue
+                                        .map((idea) => Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: Sizes.p4),
+                                              child: SizedBox(
+                                                width: 60,
+                                                child: RectoIdeaWidget(
+                                                    idea: idea!,
+                                                    onPressed: () async {
+                                                      await _controller
+                                                          .animateToPage(
+                                                              handValue.indexOf(
+                                                                  idea));
+                                                    }),
+                                              ),
+                                            )
+                                                .animate(
+                                                    onComplete: (controller) {
+                                                      debugPrint(
+                                                          "card flip has completed");
+                                                      mustDrawFlip.value =
+                                                          false;
+                                                    },
+                                                    // autoPlay: false,
+                                                    controller: flipController)
+                                                .flipH(
+                                                    begin: handValue.indexOf(
+                                                                    idea) !=
+                                                                0 &&
+                                                            mustDrawFlip.value
+                                                        ? 0
+                                                        : 1))
+                                        .toList()
+                                        .animate(
+                                          delay: 200.ms,
+                                          interval: 200.ms,
+                                          onComplete: (controller) {
+                                            // controller.reset();
+                                            debugPrint(
+                                                "animate list has completed");
+                                          },
+                                        )
+                                        .flipH(),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

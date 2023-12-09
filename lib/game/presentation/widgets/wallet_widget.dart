@@ -3,10 +3,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
+import 'package:kretatac/commons/themes/extended_colors.dart';
 import 'package:kretatac/game/application/can_play_service.dart';
 import 'package:kretatac/game/application/wallet_service.dart';
 import 'package:kretatac/ideas/presentation/widgets/cost_widget.dart';
-import 'package:kretatac/main.dart';
 
 class WalletWidget extends HookConsumerWidget {
   const WalletWidget({super.key});

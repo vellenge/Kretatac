@@ -1,19 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-const intro = """Une TAC, c’est une Thérapie Alternative et Complémentaire.
+const def =
+    """ , ce sont les Thérapies dites Alternatives et Complémentaires.""";
+const intro =
+    """Sur les réseaux, celles-ci sont parfois présentées avec des arguments chocs  et très convaincants.""";
 
-Dans la promotion des TAC sur les réseaux, celles-ci sont parfois présentées avec des arguments chocs  et très convaincants. 
-
-""";
-
-const problem = """ Mais il y a un problème...
-""";
+const problem = """Mais ces arguments ont une face cachée...""";
 
 const discover =
-    """Pour le découvrir, crée ta propre TAC et apprends comment tu peux la crédibiliser pour toucher ton audience !
+    """Pour découvrir leurs secrets, crée ta propre TAC et apprends comment tu peux la crédibiliser pour toucher ton audience !""";
 
-C’est par ici ! """;
-
+final defTextProvider = Provider<String>((ref) => def);
 final introTextProvider = Provider<String>((ref) {
   return intro;
 });

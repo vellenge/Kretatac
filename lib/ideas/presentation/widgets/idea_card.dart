@@ -15,14 +15,11 @@ class IdeaCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-
     return NeuContainer(
         shadowColor: Theme.of(context).colorScheme.onBackground,
         borderColor: Theme.of(context).colorScheme.onBackground,
         offset: neuOffset,
         borderRadius: BorderRadius.circular(Sizes.p8),
-        // color: Theme.of(context).cardColor,
         color: Colors.transparent,
         width: width,
         height: width * 16 / 9,

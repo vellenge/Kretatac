@@ -23,7 +23,7 @@ class IdeaDTO extends Notifier<List<Idea>> {
     }
     // debugPrint("Ideas list is  ${ideas.length.toString()}");
     state = ideas;
-    print(state.length);
+    // print(state.length);
   }
 
   Future<List<Map<String, dynamic>>> _getCsv(String path) async {

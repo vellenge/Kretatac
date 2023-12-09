@@ -12,8 +12,8 @@ final List<String> _prefixes = [
   "Ana",
   "Cata",
   "Phréno",
-  "Physio"
-      "Balnéo"
+  "Physio",
+  "Balnéo"
 ];
 
 final List<String> _cores = [
@@ -25,7 +25,9 @@ final List<String> _cores = [
   "méso",
   "phyto",
   "méridio",
-  "litho"
+  "litho",
+  "sylvo",
+  "papouillo"
 ];
 final List<String> _suffixes = [
   "praxie",

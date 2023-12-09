@@ -16,7 +16,7 @@ class CSVParser {
 
     final request = type != null ? await Dio().get(type!.url) : null;
     if (request != null || request?.statusCode == 200) {
-      print("${request!.statusCode} for $type");
+      debugPrint("${request!.statusCode} for $type");
 
       result = request.data;
     }
