@@ -7,11 +7,16 @@ import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
 class RectoIdeaWidget extends StatelessWidget {
   const RectoIdeaWidget(
-      {super.key, required this.idea, this.onPressed, this.showCost = true});
+      {super.key,
+      required this.idea,
+      this.onPressed,
+      this.offset,
+      this.showCost = true});
 
   final Idea idea;
   final Function()? onPressed;
   final bool showCost;
+  final Offset? offset;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +25,7 @@ class RectoIdeaWidget extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: NeuCard(
+        offset: offset ?? neuOffset,
         borderRadius: BorderRadius.circular(Sizes.p4),
         child: Stack(children: [
           Positioned.fill(

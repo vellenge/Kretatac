@@ -13,7 +13,10 @@ final List<String> _prefixes = [
   "Cata",
   "Phréno",
   "Physio",
-  "Balnéo"
+  "Balnéo",
+  "Neuro",
+  "Hypno",
+  "Algo"
 ];
 
 final List<String> _cores = [
@@ -27,7 +30,9 @@ final List<String> _cores = [
   "méridio",
   "litho",
   "sylvo",
-  "papouillo"
+  "papouillo",
+  "pneuma",
+  "méta"
 ];
 final List<String> _suffixes = [
   "praxie",
@@ -35,14 +40,19 @@ final List<String> _suffixes = [
   "logie",
   "urgie",
   "thérapie",
-  "ki",
   "isme",
   "phie",
-  "cture",
-  "ergie"
+  "puncture",
+  "ergie",
+  "pressure",
+  "sophie",
+  "tonie"
 ];
 
 final List<String> _adj = [
+  " cyclique",
+  " osmotique",
+  " alignée",
   " quantique",
   " vibratoire",
   " appliquée",
@@ -50,7 +60,8 @@ final List<String> _adj = [
   " méridienne",
   " magnétique",
   " harmonique",
-  " traditionnelle"
+  " traditionnelle",
+  " programmatoire"
 ];
 
 final prefixesProvider = Provider<List<String>>((ref) {

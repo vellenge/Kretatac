@@ -1,14 +1,10 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:kretatac/commons/constants/app_sizes.dart';
 import 'package:kretatac/commons/constants/texts/intro_text.dart';
-
 import 'package:kretatac/commons/layout/responsive_center.dart';
 import 'package:kretatac/commons/utils/screen_size.dart';
 import 'package:kretatac/commons/widgets/animated_gradient.dart';
@@ -94,15 +90,6 @@ class HomeView extends HookConsumerWidget {
                                                 text:
                                                     ref.watch(defTextProvider))
                                           ])),
-                                          // NeuText(
-                                          //   fontSize: 20,
-                                          //   text: ref.watch(defTextProvider),
-                                          //   // style: themeData
-                                          //   //     .textTheme.bodyLarge!
-                                          //   //     .copyWith(
-                                          //   //         fontWeight:
-                                          //   //             FontWeight.bold)
-                                          // ),
                                           gapH12,
                                           Text(ref.watch(introTextProvider),
                                               style: Theme.of(context)
@@ -111,7 +98,7 @@ class HomeView extends HookConsumerWidget {
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.bold)),
-                                          gapH12,
+                                          gapH8,
                                           SizedOverflowBox(
                                             size: const Size(800, 150),
                                             // minWidth: 100,
@@ -126,7 +113,7 @@ class HomeView extends HookConsumerWidget {
                                                       problemTextProvider)),
                                             ),
                                           ),
-                                          gapH12,
+                                          gapH8,
                                           Text(ref.watch(discoverTextProvider),
                                               style: themeData
                                                   .textTheme.bodyLarge),

@@ -11,9 +11,13 @@ final lightTheme = ThemeData(
   ],
   fontFamily: 'Roboto',
   colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color.fromARGB(255, 243, 128, 5),
-      primary: const Color.fromARGB(255, 255, 77, 7)),
+    seedColor: const Color.fromARGB(255, 243, 128, 5),
+    primary: const Color.fromARGB(255, 255, 77, 7),
+    surfaceTint: const Color.fromARGB(255, 227, 172, 157),
+  ),
+
   cardColor: const Color.fromARGB(255, 251, 234, 232),
   dividerColor: Colors.transparent,
+
   useMaterial3: true,
 );

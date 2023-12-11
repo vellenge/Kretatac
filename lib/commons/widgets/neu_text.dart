@@ -12,7 +12,7 @@ class NeuText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color shadow = Theme.of(context).colorScheme.onBackground;
-    final double offSize = fontSize != null ? fontSize! / 3.5 : Sizes.p16;
+    final double offSize = fontSize != null ? fontSize! / 3.6 : Sizes.p16;
 
     return Stack(children: [
       Text(text,
@@ -22,7 +22,7 @@ class NeuText extends StatelessWidget {
                 foreground: Paint()
                   ..style = PaintingStyle.stroke
                   ..strokeWidth = offSize
-                  ..strokeMiterLimit = 6
+                  ..strokeMiterLimit = 2
                   ..strokeCap = StrokeCap.butt
                   ..strokeJoin = StrokeJoin.miter
                   ..color = shadow,

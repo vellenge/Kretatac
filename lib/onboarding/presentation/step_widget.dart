@@ -11,6 +11,7 @@ class StepWidget extends StatelessWidget {
       this.buttonText = 'Suivant',
       required this.title,
       required this.text,
+      this.rich,
       this.onPressed,
       this.useCustom = false,
       this.width});
@@ -21,6 +22,7 @@ class StepWidget extends StatelessWidget {
   final void Function()? onPressed;
   final double? width;
   final bool useCustom;
+  final Widget? rich;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class StepWidget extends StatelessWidget {
                 ],
               ),
               gapH8,
-              Text(text),
+              rich ?? Text(text),
               Padding(
                 padding: const EdgeInsets.all(Sizes.p4),
                 child: Row(

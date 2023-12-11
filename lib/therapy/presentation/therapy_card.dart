@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_polygon/flutter_polygon.dart';
@@ -7,6 +9,7 @@ import 'package:kretatac/ideas/domain/idea.dart';
 import 'package:kretatac/ideas/presentation/widgets/idea_tag.dart';
 
 import 'package:kretatac/therapy/domain/therapy.dart';
+import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
 class TherapyCard extends HookWidget {
   const TherapyCard({
@@ -23,6 +26,8 @@ class TherapyCard extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final isPressed = useState(false);
+
+    final maxTags = isPressed.value ? null : min(ideas.length, 3);
 
     return InkWell(
       onTap: () => isPressed.value = !isPressed.value,
@@ -67,7 +72,7 @@ class TherapyCard extends HookWidget {
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!
-                              .copyWith(),
+                              .copyWith(fontSize: Sizes.p20),
                         )
                       ]),
                     ),
@@ -76,12 +81,23 @@ class TherapyCard extends HookWidget {
                       spacing: Sizes.p8,
                       runSpacing: Sizes.p4,
                       children: [
-                        ...ideas.map((e) => SizedBox(
+                        ...ideas.sublist(0, maxTags).map((e) => SizedBox(
                               child: IdeaTag(
                                 idea: e,
                                 isActive: true,
                               ),
                             )),
+                        if (!isPressed.value &&
+                            maxTags != null &&
+                            ideas.length > maxTags)
+                          MoreTags(
+                            child: ideas
+                                .sublist(maxTags, ideas.length)
+                                .length
+                                .toString(),
+                            stillMoreMatched: maxTags < ideas.length,
+                            color: IdeaType.argument.color,
+                          )
                       ],
                     ),
                     if (isPressed.value) ...[
@@ -113,20 +129,48 @@ class BadgeNumber extends StatelessWidget {
       children: [
         Container(
           decoration: ShapeDecoration(
-              color: Theme.of(context).extension<ExtendedColor>()!.ctaColor,
+              color: Theme.of(context).extension<ExtendedColor>()!.yellow,
               shape: const PolygonBorder(sides: 5, rotate: 15)),
         ),
         Positioned(
             left: 30,
-            bottom: 0,
+            bottom: 4,
             child: Text(
               number.toString(),
-              style: Theme.of(context)
-                  .textTheme
-                  .displaySmall!
-                  .copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: Sizes.p32,
+                  ),
             ))
       ],
+    );
+  }
+}
+
+class MoreTags extends StatelessWidget {
+  const MoreTags(
+      {super.key,
+      required this.child,
+      required this.color,
+      required this.stillMoreMatched});
+
+  final String child;
+  final Color? color;
+  final bool stillMoreMatched;
+
+  @override
+  Widget build(BuildContext context) {
+    return NeuCard(
+      offset: const Offset(2, 2),
+      borderRadius: BorderRadius.circular(Sizes.p8),
+      cardColor: stillMoreMatched ? color : Colors.grey,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 2),
+        child: Text(
+          "+ $child",
+          style: Theme.of(context).textTheme.bodySmall!.copyWith(),
+        ),
+      ),
     );
   }
 }

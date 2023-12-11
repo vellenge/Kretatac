@@ -29,7 +29,7 @@ class MatchMaker {
 
   List<MatchedTherapy> orderByMatches(List<MatchedTherapy> matches) {
     final List<MatchedTherapy> ordered = List.from(matches);
-    ordered.sort((a, b) => a.numMatches.compareTo(b.numMatches));
+    ordered.sort((a, b) => b.numMatches.compareTo(a.numMatches));
     return ordered;
   }
 }
@@ -41,6 +41,8 @@ class MatchedTherapy {
   final List<Idea> matchedIdeas;
 
   int get numMatches => matchedIdeas.length;
+  List<Idea> get unMatchedIdeas =>
+      therapy.ideas.toSet().difference(matchedIdeas.toSet()).toList();
 }
 
 final matchesProvider = Provider<List<MatchedTherapy>>((ref) {
