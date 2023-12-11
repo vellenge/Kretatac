@@ -42,23 +42,16 @@ dependencies:
   hooks_riverpod: ^2.4.6
   flutter_hooks: ^0.20.3
   flutter_polygon: ^0.3.0+2
-  card_swiper: ^3.0.1
   carousel_slider: ^4.2.1
-  swipe_deck: ^1.1.0
-  another_transformer_page_view: ^2.0.1
   rive: ^0.12.3
   flutter_animate: ^4.3.0
-  motion: ^1.4.0
   animate_do: ^3.1.2
   photo_view: ^0.14.0
   animate_gradient: ^0.0.2+1
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
   csv: ^5.1.1
   http: ^1.1.0
   dio: ^5.3.4
   onboarding_overlay: ^3.2.1
-  defer_pointer: ^0.0.2
   drop_cap_text: ^1.1.3
 
 dev_dependencies:

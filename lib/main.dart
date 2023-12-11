@@ -9,7 +9,7 @@ import 'package:kretatac/ideas/data/idea_dto.dart';
 import 'package:kretatac/onboarding/data/onboarding_steps.dart';
 import 'package:kretatac/onboarding/presentation/onboarding_widget.dart';
 import 'package:kretatac/therapy/data/therapy_dto.dart';
-import 'package:motion/motion.dart';
+
 import 'package:onboarding_overlay/onboarding_overlay.dart';
 
 final container = ProviderContainer();
@@ -17,7 +17,7 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Motion.instance.initialize();
+
   container.read(ideaDTOProvider);
   await container.read(ideaDTOProvider.notifier).getIdeas();
   container.read(therapiesDTOProvider);
