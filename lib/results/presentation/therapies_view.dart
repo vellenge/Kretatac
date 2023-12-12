@@ -11,6 +11,9 @@ import 'package:kretatac/commons/utils/is_vowel.dart';
 import 'package:kretatac/commons/widgets/animated_gradient.dart';
 import 'package:kretatac/commons/widgets/neu_text.dart';
 import 'package:kretatac/commons/widgets/primary_button.dart';
+import 'package:kretatac/counter_tag/data/counter_tag_repository.dart';
+import 'package:kretatac/counter_tag/presentation/counter_tag_button.dart';
+import 'package:kretatac/counter_tag/presentation/counter_tag_card.dart';
 import 'package:kretatac/game/application/played_ideas_service.dart';
 import 'package:kretatac/ideas/domain/idea.dart';
 
@@ -23,6 +26,7 @@ import 'package:kretatac/results/presentation/controllers/tac_provider.dart';
 import 'package:kretatac/results/presentation/evil_widget.dart';
 import 'package:kretatac/results/presentation/therapies_details_view.dart';
 import 'package:kretatac/therapy/presentation/therapy_card.dart';
+import 'package:neubrutalism_ui/neubrutalism_ui.dart';
 
 void showIdeaDialog(Idea idea, BuildContext context) {
   showDialog(
@@ -41,6 +45,7 @@ class TherapiesView extends HookConsumerWidget {
     final played = ref.watch(playedIdeasServiceProvider);
     final tac = ref.watch(tacProvider);
     final matches = ref.read(matchesProvider);
+    final counterTags = ref.watch(getCounterTagsListProvider);
     debugPrint(matches.length.toString());
 
     final height = MediaQuery.of(context).size.height;
@@ -117,21 +122,26 @@ class TherapiesView extends HookConsumerWidget {
                             ),
                           ),
                         ),
-                        gapH48,
-                        const EvilWidget(),
-                        gapH12,
                       ],
+                      gapH48,
+                      const EvilWidget(),
+                      gapH12,
                     ],
                   ),
                 ),
               ),
-              SliverList.separated(
-                itemCount: min(matches.length, 5),
-                separatorBuilder: (context, index) => gapH8,
-                itemBuilder: (context, index) => TherapyCard(
-                    therapy: matches[index].therapy,
-                    ideas: matches[index].matchedIdeas,
-                    number: index + 1),
+              SliverPadding(
+                padding: const EdgeInsets.all(Sizes.p8),
+                sliver: SliverGrid.builder(
+                    itemCount: min(matches.length, 5),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            mainAxisSpacing: Sizes.p16,
+                            crossAxisSpacing: Sizes.p16,
+                            crossAxisCount: 2),
+                    itemBuilder: (context, index) => CounterTagButton(
+                          counterTag: counterTags[index],
+                        )),
               ),
             ],
           ),

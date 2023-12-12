@@ -13,12 +13,15 @@ class CSVParser {
   Future<List<List<dynamic>>> processCsv() async {
     debugPrint('processCsv triggered');
     var result = await rootBundle.loadString(path);
+    try {
+      final request = type != null ? await Dio().get(type!.url) : null;
+      if (request != null || request?.statusCode == 200) {
+        debugPrint("${request!.statusCode} for $type");
 
-    final request = type != null ? await Dio().get(type!.url) : null;
-    if (request != null || request?.statusCode == 200) {
-      debugPrint("${request!.statusCode} for $type");
-
-      result = request.data;
+        result = request.data;
+      }
+    } catch (e) {
+      debugPrint(e.toString());
     }
 
     return const CsvToListConverter().convert(

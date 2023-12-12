@@ -1,13 +1,18 @@
-CONTRETAG,ideas,description
-Consensus,Méthode Jean-Claude™,"Ce sont des recommandations d'experts internationaux dans un domaine, issues de la synthèse de toutes les études dans ce domaine qui font la validité d'une thérapie."
-Evolution,"Nuit des temps,Tradition","Une thérapie qui évolue, c'est une thérapie qui se met à l'épreuve de la science. C'est un très bon signe de fiabilité. "
-Actif,Allongez-vous,"Il est désormais prouvé pour une multitude de pathologies que c'est le travail actif qui permet l'amélioration, voir la guérison des symptômes. Move your body !"
-En extérieur [OU] Prendre l'air [OU] Quotidien,Prendre l'air,"l'idée d'appliquer la thérapie dans le contexte du quotidien. A l'extérieur, oui ! mais pour faire face à des situations concrètes de la vie quotidienne, la reprise d'une activité sportive par exemple ? "
-Stages ,Séminaire,"Les stages sont préconisés pour une rééducation intensive, ils peuvent permettre de faire des rencontres entre pairs, de faire un point chez les patients atteints de maladies chroniques, d’acquérir de nouvelles habilités, etc... C'est un outil motivationnel, au service de différents besoins que peut rencontrer un patient. "
-Aller de l'avant,Quête de sens,"Apprendre à son patient à accepter ce qui lui arrive, pour lui permettre d'aller de l'avant. L'acceptation n'est pas quelque chose de facile, mais peut permettre d'aller de l'avant et serait un gage de qualité de vie."
-Apprendre,Ressenti,
-Conseils,Directif,"Prendre le temps d'acouter, émetez un conseil  en le mettant en perspective avec le quotidien du patient. Les conseils s'adaptent pour chacun"
-faire répéter,Inexplicitus ,"Certes ça prend du temps, mais en faisant répéter ton patient tu peux t'assurer qu'il a bien compris le message que tu as voulu lui faire passer"
-Réfléchir [OU] se remettre en question,Bon patient,"Réflechir à sa pratique, se remettre en question"
-Autonomisation,,
-Nocébo,Inexplicitus ,
+CONTRETAG,ideas,description,icone
+Consensus,"Méthode Jean-Claude™,Nuit des temps,Tradition,Cocktail,Révélation,Exotisme,E.T.S.T.","Faire appel à un groupe d’experts international dans un domaine, afin d’établir une synthèse des données connues actuelles, permettrait d’établir les fondations solides d’une thérapie.",
+Evolution,"Nuit des temps,Tradition,Exotisme","Une thérapie qui évolue, c'est une thérapie qui prend en compte les nouvelles découvertes. Elle se remet en question et n’existe pas uniquement dans sa bulle : pour cela, elle doit interagir avec le monde extérieur, les nouvelles connaissances et la recherche. Cela implique une acceptation de la critique, qui sera la meilleure preuve de sa robustesse : si la thérapie s'expose volontairement à toutes les remises en cause et qu'elle y survit malgré tout, c'est qu'elle est véritablement solide et pas simplement qu'elle en a la prétention. 
+
+En un mot, elle va de l’avant !",
+Actif,"Allongez-vous,Tactile,High tech,Bon patient","Il est désormais prouvé pour une multitude de pathologies que c'est le travail actif qui permet l'amélioration, voir la guérison des symptômes. Move your body ! [+] Pour la quasi-totalité des douleurs et pathologies chroniques, la moindre occasion de bouger est bonne à prendre et les thérapeutes devraient l'encourager. De plus, quand on est soi-même acteur de son traitement, on devient plus autonome au quotidien dans la gestion de sa maladie, et on limite le risque de devenir dépendant d'une figure d'autorité pour son bien-être et sa santé !",
+Quotidien,"Prendre l'air,Tactile,Bon patient,Au cabinet","Une thérapie ne se limite pas au contexte du cabinet, elle doit prendre en compte le quotidien du patient. 
+Elle peut se faire dans d’autres environnement que le cabinet, en extérieur par exemple. Mais dans le seul but de faire face à des situations concrètes de la vie quotidienne. La reprise d'une activité sportive par exemple, ou encore, parvenir à monter les escaliers de sa maison.",
+Stages ,Séminaire,"Les stages sont préconisés pour une rééducation intensive, ils peuvent permettre de faire des rencontres entre pairs, de faire un point chez les patients atteints de maladies chroniques, d’acquérir de nouvelles habilités, etc... C'est un outil motivationnel, au service de différents besoins que peut rencontrer un patient. ",
+Aller de l'avant,Quête de sens,"Apprendre à son patient à accepter ce qui lui arrive, pour lui permettre d'aller de l'avant. L'acceptation n'est pas quelque chose de facile, mais peut permettre d'avancer et serait gage de qualité de vie.",
+Apprendre,"Ressenti,Couteau suisse,Diplôme,Jouer la montre,Le blizzard","Apprendre ne se limite pas à l’obtention du diplôme. On apprend tout le long de notre chemin professionnel. Ça s’appelle la formation continue. 
+On aimerait bien arriver à un stade où l’on connaît tout, mais c’est un irréaliste. Les champs de connaissances sont très vastes, et les connaissances ne cessent de croître. Il est important de mettre à jour ses connaissances. 
+",
+Conseils,"Directif,Blouse blanche,Bon patient","Prendre le temps d'écouter, d'émettre un conseil en le mettant en perspective avec le quotidien du patient. Un conseil n’est pas un ordre, ni une recette toute faite, il se doit d’être adapté pour chacun. ",
+Faire répéter,Inexplicitus ,"Certes ça prend du temps, mais en faisant répéter et reformuler ton patient tu peux t'assurer qu'il a bien compris le message que tu as voulu lui faire passer. ",
+Se remettre en question,"Bon patient,Influenceur,Couteau suisse,Populaire,Un ami m'a dit 👍,Mémoire sélective,Le blizzard,Recommandé par,Overbooké","Réflechir à sa pratique, se remettre en question",
+Autonomisation,"Blouse blanche,Tactile,Directif,Contrôle technique,Bon patient",,
+Nocebo,"Inexplicitus, Directif, Controle technique, bon patient",,

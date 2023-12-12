@@ -10,6 +10,7 @@ class StarContainer extends StatelessWidget {
       this.pointRounding,
       this.valleyRounding,
       this.innerRadiusRatio,
+      this.color,
       this.squash});
 
   final Widget? child;
@@ -18,6 +19,7 @@ class StarContainer extends StatelessWidget {
   final double? points;
   final double? pointRounding;
   final double? innerRadiusRatio;
+  final Color? color;
 
   final double? valleyRounding;
   final double? squash;
@@ -34,7 +36,7 @@ class StarContainer extends StatelessWidget {
               color: Theme.of(context).colorScheme.onBackground,
             )
           ],
-          color: Theme.of(context).colorScheme.background,
+          color: color ?? Theme.of(context).colorScheme.background,
           shape: StarBorder(
               innerRadiusRatio: innerRadiusRatio ?? 0.4,
               squash: squash ?? 0,
