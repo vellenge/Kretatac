@@ -61,6 +61,8 @@ class TherapiesView extends HookConsumerWidget {
       child: Scaffold(
         body: AnimatedGradient(
           child: CustomScrollView(
+            cacheExtent: 3500,
+            shrinkWrap: false,
             controller: controller,
             slivers: [
               TacResultsAppBar(
